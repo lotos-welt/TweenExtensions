@@ -1,14 +1,16 @@
-﻿/*!
- * TweenExtensions用呼び出しサンプル.
- * 
- * @file	Sample.cs
- * @author	Lotos
- * @date	2015-11-26 02:19
- */
+﻿/************************************************
+Sample.cs
+
+Copyright (c) 2016 LotosLabo
+
+This software is released under the MIT License.
+http://opensource.org/licenses/mit-license.php
+************************************************/
 
 using UnityEngine;
 using System.Collections;
 
+/* TweenExtensions用呼び出しサンプル. */
 public class Sample : MonoBehaviour {
 
     /// <summary>
@@ -32,6 +34,7 @@ public class Sample : MonoBehaviour {
         // TweenPositionで移動する.
         TweenExtensions.Position(sampleObject, 1.0f, pos, 1, 2, tweenOnFinishedEvent);
     }
+
 
     /// <summary>
     /// Tweenアニメーション終了後に呼び出される.

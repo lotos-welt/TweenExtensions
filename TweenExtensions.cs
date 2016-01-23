@@ -1,14 +1,16 @@
-﻿/*!
- * Tween実装クラス.
- * 
- * @file	TweenExtensions.cs
- * @author	Lotos
- * @date	2015-11-26 0:24
- */
+﻿/************************************************
+TweenExtensions.cs
+
+Copyright (c) 2016 LotosLabo
+
+This software is released under the MIT License.
+http://opensource.org/licenses/mit-license.php
+************************************************/
 
 using UnityEngine;
 using System.Collections;
 
+/* Tween実装クラス. */
 public class TweenExtensions : MonoBehaviour
 {
 
