@@ -11,14 +11,12 @@ using UnityEngine;
 using System.Collections;
 
 /* Tween実装クラス. */
-public class TweenExtensions : MonoBehaviour
-{
+public class TweenExtensions : MonoBehaviour {
 
     /// <summary>
     /// Tweenアニメーションタイプ.
     /// </summary>
-    public enum TweenType
-    {
+    public enum TweenType {
         None = 0,
         Position, // ポジション.
         Rotation, // 角度.
@@ -31,8 +29,7 @@ public class TweenExtensions : MonoBehaviour
     /// <summary>
     /// Tweenスタイルタイプ.
     /// </summary>
-    public enum TweenStyleType
-    {
+    public enum TweenStyleType {
         None = 0,
         Once,  // 一回だけ.
         Loop,  // 繰り返し.
@@ -45,8 +42,7 @@ public class TweenExtensions : MonoBehaviour
     /// <summary>
     /// TweenAnimationCurveタイプ.
     /// </summary>
-    public enum TweenMethodType
-    {
+    public enum TweenMethodType {
         None = 0,
         EaseIn,    // 始めに遅くなる.
         EaseOut,   // 最後に遅くなる.
@@ -67,14 +63,12 @@ public class TweenExtensions : MonoBehaviour
     /// <param name="styleType">アニメーションスタイルタイプ.</param>
     /// <param name="methodType">アニメーションカーブタイプ.</param>
     /// <param name="callback">アニメーション終了後に実行する.</param>
-    public static void AnimationStart(int tweenType, GameObject obj, float duration, float startDelay, Vector3 pos, int styleType, int methodType, EventDelegate callback)
-    {
+    public static void AnimationStart(int tweenType, GameObject obj, float duration, float startDelay, Vector3 pos, int styleType, int methodType, EventDelegate callback) {
 
         UITweener tween = null;
 
         // Tweenアニメーションセット.
-        switch ((TweenType)(tweenType))
-        {
+        switch ((TweenType)(tweenType)) {
             case TweenType.Position:
                 tween = TweenPosition.Begin(obj, duration, pos);
                 break;
@@ -94,8 +88,7 @@ public class TweenExtensions : MonoBehaviour
         tween.delay = startDelay;
 
         // アニメーションスタイル分け.
-        switch ((TweenStyleType)(styleType))
-        {
+        switch ((TweenStyleType)(styleType)) {
             case TweenStyleType.Once:
                 tween.style = UITweener.Style.Once;
                 break;
@@ -110,8 +103,7 @@ public class TweenExtensions : MonoBehaviour
         }
 
         // アニメーションタイプ分け.
-        switch ((TweenMethodType)(methodType))
-        {
+        switch ((TweenMethodType)(methodType)) {
             case TweenMethodType.EaseIn:
                 tween.method = UITweener.Method.EaseIn;
                 break;
@@ -123,10 +115,7 @@ public class TweenExtensions : MonoBehaviour
                 break;
         }
 
-        if (callback == null)
-        {
-            return;
-        }
+        if (callback == null) return;
 
         // コールバックの指定.
         EventDelegate.Set(tween.onFinished, callback);
